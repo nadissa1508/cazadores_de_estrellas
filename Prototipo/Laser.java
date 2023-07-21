@@ -38,7 +38,6 @@ public class Laser extends Actor
         checkBoundaries();
     }
 
-    
     public void checkBoundaries(){
         GreenfootImage img=getImage();
         int width=img.getWidth();
@@ -50,8 +49,8 @@ public class Laser extends Actor
         int right= getX()+width/2;
         int top=getY()-height/2;
         int botom=getY()+height/2;
-        
-        if (left>=0){
+        //revisar este if
+        if (left<=0){
             livesIn.removeObject(this);
         }
         else if (right>=livesIn.getWidth()){

@@ -28,7 +28,7 @@ public class Nave1 extends Actor
     
     public void act(){
         processKeys();
-        
+        trackMouse();
     }
     
     public void processKeys(){
@@ -63,5 +63,12 @@ public class Nave1 extends Actor
         Laser laser1=new Laser (5);
         laser1.setRotation(getRotation());
         getWorld().addObject(laser1,getX(),getY());
+    }
+    
+    public void trackMouse(){
+        MouseInfo mi = Greenfoot.getMouseInfo();
+        if(mi != null){
+            turnTowards(mi.getX(), mi.getY());
+        }
     }
 }
