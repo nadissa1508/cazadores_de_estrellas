@@ -22,9 +22,7 @@ public class Nivel1 extends World
     
     private void prepare(){
         Nave1 nave1=new Nave1();
-        addObject(nave1,130,475);
-        Nave2 nave2=new Nave2();
-        addObject(nave2,130,175);
+        addObject(nave1,130,275);
     }
 }
 
