@@ -13,9 +13,11 @@ public class Nave1 extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int speed_;
+    private int health;
     public Nave1()
     {
         speed_=2;
+        health = 100;
     }
     
     public int getSpeed(){
@@ -24,6 +26,14 @@ public class Nave1 extends Actor
     
     public void setSpeed(int s){
         speed_=s;
+    }
+    
+    public int getHealth(){
+        return health;
+    }
+    
+    public void setHealth(int health){
+        this.health = health;
     }
     
     public void act(){
@@ -60,7 +70,7 @@ public class Nave1 extends Actor
     }
     
     public void shoot(){
-        Laser laser1=new Laser (5);
+        Laser laser1=new Laser (5,1);
         laser1.setRotation(getRotation());
         getWorld().addObject(laser1,getX(),getY());
     }
@@ -69,6 +79,13 @@ public class Nave1 extends Actor
         MouseInfo mi = Greenfoot.getMouseInfo();
         if(mi != null){
             turnTowards(mi.getX(), mi.getY());
+        }
+    }
+    
+    public void takeDamage(int damage){
+        health -= damage;
+        if(health <= 0){
+            getWorld().removeObject(this);
         }
     }
 }

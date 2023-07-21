@@ -10,10 +10,12 @@ public class Laser extends Actor
 {
     private int speed;
     private int damage;
+    private boolean colisiono;
     
-    public Laser(int s){
-        damage=1;
+    public Laser(int s, int dmg){
+        damage=dmg;
         speed=s;
+        colisiono = false;
     }
     
     public int getDamage(){
@@ -35,10 +37,14 @@ public class Laser extends Actor
     public void act()
     {
         move(speed);
-        checkBoundaries();
+        //checkBoundaries();
+        if(!colisiono){
+            checkCollision();
+        }
+        
     }
-
-    public void checkBoundaries(){
+/*+
+ * public void checkBoundaries(){
         GreenfootImage img=getImage();
         int width=img.getWidth();
         int height=img.getHeight();
@@ -48,12 +54,15 @@ public class Laser extends Actor
         int left=getX()-width/2;
         int right= getX()+width/2;
         int top=getY()-height/2;
-        int botom=getY()+height/2;
-        //revisar este if
-        if (left<=0){
+        int bottom=getY()+height/2;
+        
+        if (left <= 0 || right >= livesIn.getWidth() || top <= 0 || bottom >= livesIn.getHeight()) {
             livesIn.removeObject(this);
         }
-        else if (right>=livesIn.getWidth()){
+        
+        if (left<=0){
+            livesIn.removeObject(this);
+        }else if (right>=livesIn.getWidth()){
             livesIn.removeObject(this);
         }
         else if(top<=0){
@@ -61,6 +70,20 @@ public class Laser extends Actor
         }
         else if(botom>=livesIn.getHeight()){
             livesIn.removeObject(this);
+        }
+        
+    }
+ * 
+ */
+    
+    
+    
+    public void checkCollision(){
+        Villano1 villano = (Villano1) getOneIntersectingObject(Villano1.class);
+        if(villano != null){
+            villano.takeDamage(damage);
+            colisiono = true;
+            getWorld().removeObject(this);
         }
     }
 }

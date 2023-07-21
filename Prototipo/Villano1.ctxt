@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Villano1
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Villano1\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Villano1()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Villano1\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=int\ getHealth()
+comment3.params=health
+comment3.target=void\ setHealth(int)
+comment4.params=damage
+comment4.target=void\ takeDamage(int)
+comment5.params=
+comment5.target=void\ shootLaserVillano()
+comment6.params=
+comment6.target=void\ act()
+numComments=7
