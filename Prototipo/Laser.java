@@ -43,6 +43,7 @@ public class Laser extends Actor
         }
         
     }
+    
 /*+
  * public void checkBoundaries(){
         GreenfootImage img=getImage();
@@ -75,9 +76,7 @@ public class Laser extends Actor
     }
  * 
  */
-    
-    
-    
+   
     public void checkCollision(){
         Villano1 villano = (Villano1) getOneIntersectingObject(Villano1.class);
         if(villano != null){
