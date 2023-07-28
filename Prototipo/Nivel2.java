@@ -45,7 +45,7 @@ public class Nivel2 extends World
         addObject(counter,100,50);
         addObject(healthbar,230,50);
         nave22 nave22 = new nave22();
-        addObject(nave22,128,321);
+        addObject(nave22,100,300);
         Jefe2 jefe2 = new Jefe2();
         addObject(jefe2,893,313);
     }

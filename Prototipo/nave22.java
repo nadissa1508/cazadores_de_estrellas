@@ -9,30 +9,45 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class nave22 extends Actor
 {
     boolean canFire=true;
+    private int speed_;
     /**
      * Act - do whatever the nave22 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public nave22(){
-        
+        speed_=2;
     }
     public void act()
     {
         moveAround();
         fireProjectile();
     }
+    public int getSpeed(){
+        return speed_;
+    }
+    public void setSpeed(int s){
+        speed_=s;
+    }
     public void moveAround(){
-        if (Greenfoot.isKeyDown("W")){
-            setLocation(getX()+5,getY());
+        move(speed_);
+        if (Greenfoot.isKeyDown("left")){
+            turn(-5);
         }
-        if (Greenfoot.isKeyDown("S")){
-            setLocation(getX()-5,getY());
+        
+        else if (Greenfoot.isKeyDown("right")){
+            turn(5);
         }
-        if (Greenfoot.isKeyDown("D")){
-            setLocation(getX(),getY()+5);
+        
+        else if (Greenfoot.isKeyDown("up")){
+            if(speed_<=10){
+                speed_++;
+            }
         }
-        if (Greenfoot.isKeyDown("A")){
-            setLocation(getX(),getY()-5);
+        
+        else if (Greenfoot.isKeyDown("down")){
+            if(speed_>0){
+                speed_--;
+            }
         }
     }
     public void fireProjectile(){

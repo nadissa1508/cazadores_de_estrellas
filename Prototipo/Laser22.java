@@ -24,6 +24,9 @@ public class Laser22 extends Actor
         if(getX()==999){
             getWorld().removeObject(this);
         }
+        else if (getX()==1){
+            getWorld().removeObject(this);
+        }
     }
     
 }
