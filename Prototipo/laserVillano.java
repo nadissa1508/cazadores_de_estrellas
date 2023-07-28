@@ -49,9 +49,10 @@ public class laserVillano extends Actor
         }
         move(speed);
         checkCollision();
-        removeFromWorld();
+        //removeFromWorld();
         // Add your action code here.
     }
+    
     public void removeFromWorld(){
         if(getX()==1){
             getWorld().removeObject(this);

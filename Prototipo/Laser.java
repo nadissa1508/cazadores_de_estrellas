@@ -40,6 +40,10 @@ public class Laser extends Actor
         //checkBoundaries();
         if(!colisiono){
             checkCollision();
+        }else{
+            if(isTouchingWall()){
+                getWorld().removeObject(this);
+            }
         }
         
     }
@@ -84,5 +88,22 @@ public class Laser extends Actor
             colisiono = true;
             getWorld().removeObject(this);
         }
+    }
+    
+    private boolean isTouchingWall() {
+        // Obtener la posición del objeto
+        int x = getX();
+        int y = getY();
+        
+        // Obtener las dimensiones del mundo (escenario)
+        int worldWidth = getWorld().getWidth();
+        int worldHeight = getWorld().getHeight();
+        
+        // Verificar si el objeto está tocando las paredes (izquierda, derecha, arriba o abajo)
+        if (x <= 0 || x >= worldWidth - 1 || y <= 0 || y >= worldHeight - 1) {
+            return true;
+        }
+        
+        return false;
     }
 }
