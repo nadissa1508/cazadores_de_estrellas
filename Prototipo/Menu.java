@@ -31,7 +31,6 @@ public class Menu extends World
     public void act(){
         if (Greenfoot.isKeyDown("UP") && opcion!=0) {opcion++;}
         if (Greenfoot.isKeyDown("Down") && opcion!=1) {opcion--;}
-        Greenfoot.playSound("Musik.mp3");
         if (opcion>=2) opcion=0;
         if (opcion<0) opcion=1;
         
@@ -40,7 +39,7 @@ public class Menu extends World
         if (Greenfoot.isKeyDown("SPACE") || Greenfoot.isKeyDown("ENTER")){
             switch(opcion){
                 case 0: //Jugar
-                    Greenfoot.setWorld(new Nivel1());
+                    Greenfoot.setWorld(new Nivel2());
                     break;
                 case 1: //Salir
                     Greenfoot.stop();

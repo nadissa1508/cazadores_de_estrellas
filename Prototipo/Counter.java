@@ -19,7 +19,7 @@ public class Counter extends Actor{
         score++;
     }
     public void YouWin(){
-        if (score>=150){
+        if (score>=500){
             getWorld().addObject(new YouWin(),500,300);
             Greenfoot.stop();
         }

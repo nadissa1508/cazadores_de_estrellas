@@ -52,7 +52,9 @@ public class nave22 extends Actor
     }
     public void fireProjectile(){
         if(Greenfoot.isKeyDown("shift")&& canFire==true){
-            getWorld().addObject(new Laser22(),getX()+50,getY()-2);
+            Laser22 projectile = new Laser22();
+            getWorld().addObject(projectile,getX()+5,getY()-2);
+            projectile.setRotation(getRotation());
             canFire=false;
         }
         else if(Greenfoot.isKeyDown("shift")){

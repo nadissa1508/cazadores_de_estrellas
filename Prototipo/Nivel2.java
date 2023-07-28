@@ -29,6 +29,7 @@ public class Nivel2 extends World
     }
     public void act(){
             addEnemy();
+            Greenfoot.playSound("Musik.mp3");
     }
     public void addEnemy(){
         if(Greenfoot.getRandomNumber(100)<2){
