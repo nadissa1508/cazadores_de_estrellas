@@ -12,6 +12,7 @@ public class Villano1 extends Actor
     private int health;
     private int timer;
     private int actCounter;
+    private int puntos;
     /**
      * Act - do whatever the Villano1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -32,6 +33,8 @@ public class Villano1 extends Actor
     
     public void takeDamage(int damage){
         health -= damage;
+        puntos += 5;
+        getWorld().showText("Score: " + puntos,350, 50);
         if(health <= 0){
             getWorld().removeObject(this);
             Greenfoot.setWorld(new Nivel2());
