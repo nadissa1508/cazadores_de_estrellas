@@ -53,5 +53,13 @@ public class Nivel1 extends World
         
     }
     
+    public void eliminarCorazones() {
+        // Ocultar los corazones que ya no deben mostrarse
+        removeObject(corazon2);
+        removeObject(corazon1);
+        removeObject(corazon);
+        
+    }
+    
 }
 

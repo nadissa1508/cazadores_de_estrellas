@@ -87,13 +87,11 @@ public class Nave1 extends Actor
         health -= damage;
         Nivel1 nivel1 = new Nivel1();
         nivel1.updateCorazones();
+        YouLose perdiste = new YouLose();
         if(health <= 0){
-            getWorld().removeObject(this);
-            getWorld().removeObject(nivel1.corazon);
-            getWorld().removeObject(nivel1.corazon1);
-            getWorld().removeObject(nivel1.corazon2);
-            YouLose perdiste = new YouLose();
-            getWorld().addObject(perdiste);
+            nivel1.eliminarCorazones();
+            getWorld().addObject(perdiste,150 ,250);
+            getWorld().removeObject(this);  
         }
     }
     

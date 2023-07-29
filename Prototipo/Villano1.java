@@ -34,6 +34,7 @@ public class Villano1 extends Actor
         health -= damage;
         if(health <= 0){
             getWorld().removeObject(this);
+            Greenfoot.setWorld(new Nivel2());
         }
     }
     public void shootLaserVillano(){
