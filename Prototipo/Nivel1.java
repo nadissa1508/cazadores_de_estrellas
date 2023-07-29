@@ -33,7 +33,7 @@ public class Nivel1 extends World
     }
     
     public void act(){
-        
+         Greenfoot.playSound("Musik.mp3");
     }
     
     public void crearCorazones(){

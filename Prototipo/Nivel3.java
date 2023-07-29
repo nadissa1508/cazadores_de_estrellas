@@ -27,4 +27,8 @@ public class Nivel3 extends World
         addObject(jefe,850,275);
         
     }
+    
+    public void act(){
+         Greenfoot.playSound("Musik.mp3");
+    }
 }
