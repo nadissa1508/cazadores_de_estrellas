@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Nave1
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Nave1\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=Nave1()
+comment1.params=tipoVill
+comment1.target=Nave1(int)
 comment10.params=damage
 comment10.target=void\ takeDamage(int)
 comment2.params=

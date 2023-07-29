@@ -54,6 +54,7 @@ public class Jefe2 extends Actor
             healthbar.loseHealth();
             healthbar.loseHealth();
             getWorld().removeObject(this);
+            Greenfoot.setWorld(new Nivel3());
         }
     }
 }

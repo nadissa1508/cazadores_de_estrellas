@@ -14,11 +14,13 @@ public class Nave1 extends Actor
      */
     private int speed_;
     private int health;
+    private int tipoVillano;
     
-    public Nave1()
+    public Nave1(int tipoVill)
     {
         speed_=2;
         health = 100;
+        tipoVillano = tipoVill;
     }
     
     public int getSpeed(){
@@ -71,7 +73,7 @@ public class Nave1 extends Actor
     }
     
     public void shoot(){
-        Laser laser1=new Laser (5,1);
+        Laser laser1=new Laser (5,1,tipoVillano);
         laser1.setRotation(getRotation());
         getWorld().addObject(laser1,getX(),getY());
     }

@@ -10,11 +10,13 @@ public class Laser extends Actor
 {
     private int speed;
     private int damage;
+    private int tipoVillano;
     //private boolean colisiono;
     
-    public Laser(int s, int dmg){
+    public Laser(int s, int dmg, int tipoVill){
         damage=dmg;
         speed=s;
+        tipoVillano = tipoVill;
         //colisiono = false;
     }
     
@@ -79,12 +81,21 @@ public class Laser extends Actor
  */
    
     public boolean checkCollision(){
-        Villano1 villano = (Villano1) getOneIntersectingObject(Villano1.class);
         boolean colision = false;
-        if(villano != null){
-            villano.takeDamage(damage);
-            colision = true;
+        if(tipoVillano == 1){
+            Villano1 villano = (Villano1) getOneIntersectingObject(Villano1.class);
+            if(villano != null){
+                villano.takeDamage(damage);
+                colision = true;
+            }
+        }else if(tipoVillano == 2){
+            Jefe3 jefe3 = (Jefe3) getOneIntersectingObject(Jefe3.class);
+            if(jefe3 != null){
+                jefe3.takeDamage(damage);
+                colision = true;
+            }
         }
+        
         return colision;
     }
     

@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Nivel1 extends World
 {
-    Nave1 nave1 = new Nave1();
+    Nave1 nave1 = new Nave1(1);
     vidaNave corazon = new vidaNave();
     vidaNave corazon1 = new vidaNave();
     vidaNave corazon2 = new vidaNave();
