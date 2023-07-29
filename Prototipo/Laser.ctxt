@@ -13,7 +13,7 @@ comment5.params=
 comment5.target=void\ act()
 comment5.text=\r\n\ Act\ -\ do\ whatever\ the\ Laser\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment6.params=
-comment6.target=void\ checkCollision()
+comment6.target=boolean\ checkCollision()
 comment6.text=+\r\n\ public\ void\ checkBoundaries(){\r\n\ \ \ \ \ \ \ \ GreenfootImage\ img\=getImage();\r\n\ \ \ \ \ \ \ \ int\ width\=img.getWidth();\r\n\ \ \ \ \ \ \ \ int\ height\=img.getHeight();\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ World\ livesIn\=getWorld();\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ int\ left\=getX()-width/2;\r\n\ \ \ \ \ \ \ \ int\ right\=\ getX()+width/2;\r\n\ \ \ \ \ \ \ \ int\ top\=getY()-height/2;\r\n\ \ \ \ \ \ \ \ int\ bottom\=getY()+height/2;\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ if\ (left\ <\=\ 0\ ||\ right\ >\=\ livesIn.getWidth()\ ||\ top\ <\=\ 0\ ||\ bottom\ >\=\ livesIn.getHeight())\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ livesIn.removeObject(this);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ if\ (left<\=0){\r\n\ \ \ \ \ \ \ \ \ \ \ \ livesIn.removeObject(this);\r\n\ \ \ \ \ \ \ \ }else\ if\ (right>\=livesIn.getWidth()){\r\n\ \ \ \ \ \ \ \ \ \ \ \ livesIn.removeObject(this);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ else\ if(top<\=0){\r\n\ \ \ \ \ \ \ \ \ \ \ \ livesIn.removeObject(this);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ else\ if(botom>\=livesIn.getHeight()){\r\n\ \ \ \ \ \ \ \ \ \ \ \ livesIn.removeObject(this);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ }\r\n\ \r\n
 comment7.params=
 comment7.target=boolean\ isTouchingWall()

@@ -14,6 +14,7 @@ public class Nave1 extends Actor
      */
     private int speed_;
     private int health;
+    
     public Nave1()
     {
         speed_=2;
@@ -84,8 +85,17 @@ public class Nave1 extends Actor
     
     public void takeDamage(int damage){
         health -= damage;
+        Nivel1 nivel1 = new Nivel1();
+        nivel1.updateCorazones();
         if(health <= 0){
             getWorld().removeObject(this);
+            getWorld().removeObject(nivel1.corazon);
+            getWorld().removeObject(nivel1.corazon1);
+            getWorld().removeObject(nivel1.corazon2);
+            YouLose perdiste = new YouLose();
+            getWorld().addObject(perdiste);
         }
     }
+    
+    
 }

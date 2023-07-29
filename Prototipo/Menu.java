@@ -39,7 +39,7 @@ public class Menu extends World
         if (Greenfoot.isKeyDown("SPACE") || Greenfoot.isKeyDown("ENTER")){
             switch(opcion){
                 case 0: //Jugar
-                    Greenfoot.setWorld(new Nivel2());
+                    Greenfoot.setWorld(new Nivel1());
                     break;
                 case 1: //Salir
                     Greenfoot.stop();

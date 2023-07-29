@@ -10,12 +10,12 @@ public class Laser extends Actor
 {
     private int speed;
     private int damage;
-    private boolean colisiono;
+    //private boolean colisiono;
     
     public Laser(int s, int dmg){
         damage=dmg;
         speed=s;
-        colisiono = false;
+        //colisiono = false;
     }
     
     public int getDamage(){
@@ -38,12 +38,9 @@ public class Laser extends Actor
     {
         move(speed);
         //checkBoundaries();
-        if(!colisiono){
-            checkCollision();
-        }else{
-            if(isTouchingWall()){
-                getWorld().removeObject(this);
-            }
+       
+        if(isTouchingWall() || checkCollision()){
+            getWorld().removeObject(this);
         }
         
     }
@@ -81,13 +78,14 @@ public class Laser extends Actor
  * 
  */
    
-    public void checkCollision(){
+    public boolean checkCollision(){
         Villano1 villano = (Villano1) getOneIntersectingObject(Villano1.class);
+        boolean colision = false;
         if(villano != null){
             villano.takeDamage(damage);
-            colisiono = true;
-            getWorld().removeObject(this);
+            colision = true;
         }
+        return colision;
     }
     
     private boolean isTouchingWall() {

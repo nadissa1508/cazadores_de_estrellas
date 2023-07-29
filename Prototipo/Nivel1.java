@@ -9,8 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Nivel1 extends World
 {
     Nave1 nave1 = new Nave1();
-    private int numCorazones;
-    private int maxCorazones;
+    vidaNave corazon = new vidaNave();
+    vidaNave corazon1 = new vidaNave();
+    vidaNave corazon2 = new vidaNave();
     /**
      * Constructor for objects of class Nivel1.
      * 
@@ -27,35 +28,30 @@ public class Nivel1 extends World
         addObject(nave1,130,275);
         Villano1 villano = new Villano1();
         addObject(villano,850,275);
-        maxCorazones = 3;
-        numCorazones = maxCorazones;
+        crearCorazones();
         
-        for (int i = 0; i < maxCorazones; i++) {
-            vidaNave corazon = new vidaNave();
-            addObject(corazon, 50 + i * 80, 50);
-        }
     }
     
     public void act(){
-        int vidaNave = nave1.getHealth();
-        int corazonesMostrados = Math.min(maxCorazones, (vidaNave + 25) / 50); 
-        if (corazonesMostrados != numCorazones) {
-            updateCorazones(corazonesMostrados);
-        }
+        
     }
     
-    private void updateCorazones(int corazonesMostrados) {
-        // Ocultar los corazones que ya no deben mostrarse
-        for (int i = maxCorazones - 1; i >= corazonesMostrados; i--) {
-            vidaNave corazon = (vidaNave) getObjects(vidaNave.class).get(i);
-        }
-        
-        // Mostrar los corazones que deben mostrarse
-        for (int i = 0; i < corazonesMostrados; i++) {
-            vidaNave corazon = (vidaNave) getObjects(vidaNave.class).get(i);
-        }
-        
-        numCorazones = corazonesMostrados;
+    public void crearCorazones(){
+        addObject(corazon, 80, 50);
+        addObject(corazon1, 160, 50);
+        addObject(corazon2, 240, 50);
     }
+    
+    public void updateCorazones() {
+        // Ocultar los corazones que ya no deben mostrarse
+        int vida = nave1.getHealth();
+        if(vida <= 75){
+            removeObject(corazon2);
+        }else if(vida <= 50){
+            removeObject(corazon1);
+        }
+        
+    }
+    
 }
 

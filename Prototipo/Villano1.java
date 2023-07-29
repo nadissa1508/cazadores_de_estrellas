@@ -17,7 +17,7 @@ public class Villano1 extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Villano1(){
-        health = 50;
+        health = 100;
         timer = 0;
         actCounter = 0;
     }
@@ -37,7 +37,7 @@ public class Villano1 extends Actor
         }
     }
     public void shootLaserVillano(){
-        laserVillano laserV = new laserVillano(5,1);
+        laserVillano laserV = new laserVillano(5,10);
         laserV.setRotation(180);
         getWorld().addObject(laserV, getX(), getY());
     }
